@@ -2347,7 +2347,7 @@ void getNoise2D_float(float2 uv, float scale, float seed, float frequency, float
     state.domain_warp_amp = domainWarpAmp;
     state.domain_warp_type = (int)domainWarpType;
 
-    Out = fnlGetNoise2D(state, (uv.x * scale), (uv.y * scale));
+    Out = (fnlGetNoise2D(state, (uv.x * scale), (uv.y * scale)) + 1.0) / 2.0;
     
 }
 
