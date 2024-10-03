@@ -2350,6 +2350,29 @@ void getNoise2D_float(float2 uv, float scale, float seed, float frequency, float
     Out = (fnlGetNoise2D(state, (uv.x * scale), (uv.y * scale)) + 1.0) / 2.0;
 }
 
+void getNoise3D_float(float3 uv, float scale, float seed, float frequency, float noiseType, float rotationType3d, float fractalType, float octaves, float lacunarity, float gain, float weightedStrength, float pingPongStrength, float cellularDistanceFunc, float cellularReturnType, float cellularJitterMod, float domainWarpAmp, float domainWarpType, out float Out)
+{
+    fnl_state state;
+
+    state.seed = seed;
+    state.frequency = frequency;
+    state.noise_type = (int)noiseType;
+    state.rotation_type_3d = (int)rotationType3d;
+    state.fractal_type = (int)fractalType;
+    state.octaves = (int)octaves;
+    state.lacunarity = lacunarity;
+    state.gain = gain;
+    state.weighted_strength = weightedStrength;
+    state.ping_pong_strength = pingPongStrength;
+    state.cellular_distance_func = (int)cellularDistanceFunc;
+    state.cellular_return_type = (int)cellularReturnType;
+    state.cellular_jitter_mod = cellularJitterMod;
+    state.domain_warp_amp = domainWarpAmp;
+    state.domain_warp_type = (int)domainWarpType;
+
+    Out = (fnlGetNoise3D(state, (uv.x * scale), (uv.y * scale), (uv.z * scale)) + 1.0) / 2.0;
+}
+
 
 
 
