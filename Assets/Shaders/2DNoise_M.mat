@@ -38,6 +38,7 @@ Material:
     - _Frequency: 0.01
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Scale: 512
     - _Seed: 1337
     m_Colors: []
   m_BuildTextureStacks: []
