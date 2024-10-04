@@ -7,8 +7,9 @@ float accDensity = 0;
 
 fnl_state state;
 
-void Raymarch_float(float3 rayOrigin, float3 rayDirection, float numSteps, float stepSize, float densityScale, float noiseScale, out float Out)
+void Raymarch_float(float3 rayOrigin, float3 rayDirection, float numSteps, float stepSize, float densityScale, float noiseScale, float time, out float Out)
 {
+    
     for(int i = 0; i < numSteps; i++)
     {
         rayOrigin += (rayDirection * stepSize);
@@ -19,8 +20,8 @@ void Raymarch_float(float3 rayOrigin, float3 rayDirection, float numSteps, float
         state.frequency = 0.01f;
         state.noise_type = FNL_NOISE_OPENSIMPLEX2;
         state.rotation_type_3d = FNL_ROTATION_NONE;
-        state.fractal_type = FNL_FRACTAL_NONE;
-        state.octaves = 3;
+        state.fractal_type = FNL_FRACTAL_FBM;
+        state.octaves = 4;
         state.lacunarity = 2.0f;
         state.gain = 0.5f;
         state.weighted_strength = 0.0f;
@@ -33,7 +34,7 @@ void Raymarch_float(float3 rayOrigin, float3 rayDirection, float numSteps, float
 
         // Sample 3D Noise at position
 
-        float sampleDensity = (fnlGetNoise3D(state, rayOrigin.x * 512, rayOrigin.y * 512, rayOrigin.z * 512) + 1.0) / 2.0;
+        float sampleDensity = (fnlGetNoise3D(state, (rayOrigin.x * noiseScale) + time, (rayOrigin.y * noiseScale) + time, (rayOrigin.z * noiseScale) + time) + 1.0) / 2.0;
 
         accDensity += sampleDensity * densityScale / 100;
         

@@ -35,12 +35,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DensityScale: 0.01
+    - _DensityScale: 1
+    - _Density_Scale: 1
+    - _Noise_Scale: 256
     - _NumSteps: 64
+    - _Num_Steps: 64
     - _QueueControl: 0
     - _QueueOffset: 0
     - _StepSize: 0.01
-    m_Colors: []
+    - _Step_Size: 0.01
+    m_Colors:
+    - _Noise_Remap: {r: -1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5951824408069313695
 MonoBehaviour:
