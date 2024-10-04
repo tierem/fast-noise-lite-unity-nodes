@@ -10,7 +10,8 @@ Material:
   m_Name: Raymarching_M
   m_Shader: {fileID: -6465566751694194690, guid: 46ff5f004095d3144bbc41760658746e,
     type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _NOISE_TYPE_CELLULAR
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -36,16 +37,18 @@ Material:
     m_Ints: []
     m_Floats:
     - _DensityScale: 1
-    - _Density_Scale: 1
-    - _Noise_Scale: 256
+    - _Density_Scale: 10
+    - _NOISE_TYPE: 2
+    - _Noise_Scale: 512
     - _NumSteps: 64
-    - _Num_Steps: 64
+    - _Num_Steps: 32
     - _QueueControl: 0
     - _QueueOffset: 0
     - _StepSize: 0.01
     - _Step_Size: 0.01
+    - _Time_Multiplier: 20
     m_Colors:
-    - _Noise_Remap: {r: -1, g: 1, b: 0, a: 0}
+    - _Noise_Remap: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5951824408069313695
 MonoBehaviour:
