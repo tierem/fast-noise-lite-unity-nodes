@@ -47,6 +47,9 @@
 // VERSION: 1.1.1
 // https://github.com/Auburn/FastNoiseLite
 
+#ifndef FAST_NOISE_LITE
+#define FAST_NOISE_LITE
+
 // Switch between using floats or doubles for input position
 typedef float FNLfloat;
 //typedef double FNLfloat;
@@ -2373,7 +2376,7 @@ void getNoise3D_float(float3 uv, float scale, float seed, float frequency, float
     Out = (fnlGetNoise3D(state, (uv.x * scale), (uv.y * scale), (uv.z * scale)) + 1.0) / 2.0;
 }
 
-
+#endif
 
 
 
