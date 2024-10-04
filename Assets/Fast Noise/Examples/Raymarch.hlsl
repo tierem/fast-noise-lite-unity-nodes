@@ -1,7 +1,7 @@
 #ifndef RAYMARCH_BASIC
 #define RAYMARCH_BASIC
 
-#include "Assets/Fast Noise/FastNoiseLite.hlsl"
+#include "Assets/Fast Noise/Examples/FastNoiseLite.hlsl"
 
 
 
